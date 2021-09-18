@@ -1,0 +1,110 @@
+OnInit
+TTS "UK English Female" 70 wait "All systems are go"
+#Chat Send "/me All systems are go"
+
+OnCommand b 0 !kcreset
+TTS "UK English Female" 70 wait "Now resetting Cruise Control"
+Reset
+
+OnCommand b 0 !example
+Chat Send "Success! It worked!"
+
+
+
+
+OnCommand u m3ttyboy 0 !catcam
+TTS "US English Female" "{user} is turning on the cat cam now."
+Delay 5
+OBS Source "CAT CAM" on
+
+OnCommand e 0 !oof
+Play 100 wait oof.wav
+
+OnCommand e 0 !ooof
+Play 100 wait ooof.wav
+
+OnCommand e 0 !oooof
+Play 100 wait oooof.wav
+
+OnCommand e 0 !ooooof
+Play 100 wait ooooof.wav
+
+OnCommand e 0 !oooooof
+Play 100 wait oooooof.wav
+
+OnCommand b 0 !shrug
+OBS Source "Shrug" on
+delay 5
+OBS Source "Shrug" off
+
+
+OnCommand b 0 !showtime
+Delay 2
+Chat Send /clear
+OBS Scene BRB
+Delay 3
+TTS "UK English Male" 70 wait "Going live in"
+TTS "UK English Male" 70 wait "5"
+TTS "UK English Male" 70 wait "4"
+TTS "UK English Male" 70 wait "3"
+TTS "UK English Male" 70 wait "2"
+TTS "UK English Male" 70 wait "1"
+OBS StartStream
+
+OnCommand b 0 !coding
+Delay 1
+Chat Send !title [no mic] Time to work on Game Dev!
+Delay 1
+Chat Send !game Software and Game Development
+Delay 1
+Chat Send !tags Backseating Allowed, Programming, Unity, Game Development
+Delay 1
+Chat Send All done.
+
+
+
+OnCommand b 0 !brb
+OBS Scene BRB
+
+OnCommand e 0 !nowplaying !np
+OBS Source "Now Playing" off
+OBS Source "Now Playing" on
+
+OnCommand b 0 !shutitdown
+Delay 10
+TTS "UK English Male" 70 wait "Thank you all for watching my stream."
+OBS Scene Stream End
+
+OnOBSSwitchScenes "Stream End"
+Delay 30
+TTS "UK English Male" 70 wait "now ending stream"
+delay 5
+OBS StopStream
+
+
+OnOBSStreamStarted
+TTS "UK English Male" 70 wait "You are now live!"
+Delay 5
+Chat Send "/me Hello everyone. Welcome to the stream. I'm still setting things up but I should be ready soon."
+
+OnOBSStreamStopped
+TTS "UK English Male" 70 wait "Your stream has ended"
+
+
+OnEveryChatMessage
+TTS "US English Male" 70 wait "{user} said {message}"
+Delay 5
+
+
+#Channel Points
+OnChannelPoint "Turn on Cat Cam"
+TTS "US English Female" "{user} redeemed the Cat Cam channel point reward and is turning on the cat cam now."
+Delay 5
+OBS Source "CAT CAM" on
+
+OnChannelPoint "oof"
+Play 100 wait oof.wav
+
+OnChannelPoint "oooooof"
+Play 100 wait oooooof.wav
+
